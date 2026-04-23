@@ -1,0 +1,75 @@
+ body {
+      width: 100%;
+      height: 100vh;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .headerSpace {
+      width: 100vw;
+      height: 70px;
+    }
+
+    .header {
+      width: 100vw;
+      height: 70px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: blue;
+      display: flex;
+      align-items: center;
+    }
+    .Title{
+        display: flex;
+        flex-direction: column-reverse;
+        background-color: brown;
+        
+
+        
+    }
+
+    .siderSpace {
+      width: 130px;
+      height: calc(100vh - 70px);
+      flex-shrink: 0;
+    }
+
+    .sider {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 130px;
+      height: calc(100vh - 70px);
+      background-color: rgb(67, 67, 122);
+    }
+
+    .bodyColumnContainer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .bodyRowContainer {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100%;
+      background-color: blueviolet;
+    }
+
+    .item {
+      width: 100px;
+      height: 300px;
+      margin-top: 10px;
+      background-color: aqua;
+      margin: 20px;
+      padding: 40px;
+      display: flex;
+      float: left;
+    }
+  
