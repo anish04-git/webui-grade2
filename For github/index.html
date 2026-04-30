@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/For github/assets/css/style.css">
     <script src="/For github/main.js"></script>
     <script src="counter.js"></script>
 </head>
+
 <body>
-    <h1>guest</h1>
-    <button onclick="sayHello()">click</button>
-    
-    <p id="counter">0</p>
-    <button onclick="decrement()">-1</button>
-    <button onclick="reset()">Reset</button>
+    <section>
+        <h1>guest</h1>
+        <button onclick="sayHello()">click</button>
+    </section>
+
+    <section>
+        <p id="counter">0</p>
+        <button onclick="increment()">+1</button>
+        <button onclick="decrement()">-1</button>
+        <button onclick="reset()">Reset</button>
+    </section>
+
+    <section>
+        <img id="photo" src="assets/images/cat.jpg" width="320">
+        <button onclick="changePic()">change</button>
+    </section>
+
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/image.js"></script>
 </body>
+
 </html>
