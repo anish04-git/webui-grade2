@@ -1,4 +1,7 @@
+
+
 let isCat = true;
+
 
 function changePic() {
   const img = document.getElementById('photo');
@@ -9,3 +12,5 @@ function changePic() {
   }
   isCat = !isCat;
 }
+
+setInterval(changePic, 1000)
