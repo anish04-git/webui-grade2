@@ -3,103 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/cafe/style.css">
-    <script src="/cafe/script.js"></script>
-    
+
+    <title>Bunny Café</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
-   <header>
-   <div class="logo">Bunny Café</div>
 
-   <nav>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#access">Access</a>
-      <a href="#contact">Contact</a>
-   </nav>
-</header>
-<section class="hero">
+    <!-- HEADER -->
+    <header>
 
-   <img src="img1.jpg" alt="Cafe Hero Image">
+        <div class="logo">
+            <img src="log.1.jpg" alt="Bunny cafe logo">
+            <span>Bunny Cafe</span>
+        </div>
 
-   <div class="hero-content">
-      <h1>Fresh Coffee & Sweet Moments</h1>
+        <button class="menu-btn">☰</button>
 
-      <p>
-         Relax and enjoy your day with us.
-      </p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-      <button>View Menu</button>
-   </div>
+    </header>
 
-</section>
-<section id="about">
-   <h2>About Us</h2>
 
-   <p>
-      Bunny Café is a cozy place where people can enjoy
-      premium coffee, smoothies, and desserts in a relaxing atmosphere.
-   </p>
-</section>
-<section id="menu">
+    <!-- HERO -->
+    <section id="home" class="hero">
 
-   <h2>Popular Menu</h2>
+        <div class="hero-content">
 
-   <div class="menu-container">
+            <h1>Fresh Coffee & Sweet Moments</h1>
 
-      <div class="menu-item">
-         <img src="img4.jpg" alt="Coffee">
+            <p>
+                Enjoy coffee, smoothies, and desserts
+                in a relaxing atmosphere.
+            </p>
 
-         <h3>Cappuccino</h3>
+            <button>View Menu</button>
 
-         <p>Rich espresso with creamy milk foam.</p>
+        </div>
 
-         <span>¥450</span>
-      </div>
+    </section>
 
-      <div class="menu-item">
-         <img src="berry.jpg" alt="Smoothie">
 
-         <h3>Berry Smoothie</h3>
+    <!-- ABOUT -->
+    <section id="about">
 
-         <p>Fresh berries blended with yogurt.</p>
+        <h2>About Us</h2>
 
-         <span>¥650</span>
-      </div>
-      <div class="menu-item">
-         <img src="expresso.jpg" alt="Smoothie">
+        <p>
+            Bunny Café is a cozy café in Osaka, Japan,
+            serving premium coffee and delicious desserts.
+        </p>
 
-         <h3>Espresso</h3>
+    </section>
 
-         <p>Strong and aromatic espresso crafted from freshly roasted premium coffee beans.
-</p>
 
-         <span>¥450</span>
-      </div>
-      <div class="menu-item">
-         <img src="latte.jpg" alt="Smoothie">
+    <!-- MENU -->
+    <section id="menu">
 
-         <h3>Latte</h3>
+        <h2>Popular Menu</h2>
 
-         <p>Smooth and creamy latte made with rich espresso and fresh steamed milk.</p>
+        <div class="menu-container">
 
-         <span>¥550</span>
-      </div>
+            <div class="menu-item">
 
-   </div>
+                <img src="img4.jpg" alt="Cappuccino">
 
-</section>
-<section id="access">
-   <h2>Access</h2>
+                <h3>Cappuccino</h3>
 
-   <p>Osaka, Japan</p>
-   <p>Open: 9:00 AM - 10:00 PM</p>
-   <p>Phone: 05-0560-2980</p>
-</section>
-<footer>
-   <p>© 2026 Bunny Café. All Rights Reserved.</p>
-</footer>
-    
+                <p>Rich espresso with creamy milk foam.</p>
+
+                <span>¥450</span>
+
+            </div>
+
+            <div class="menu-item">
+
+                <img src="berry.jpg" alt="Berry Smoothie">
+
+                <h3>Berry Smoothie</h3>
+
+                <p>Fresh berries blended with yogurt.</p>
+
+                <span>¥650</span>
+
+            </div>
+
+            <div class="menu-item">
+
+                <img src="latte.jpg" alt="Latte">
+
+                <h3>Latte</h3>
+
+                <p>Smooth latte with fresh steamed milk.</p>
+
+                <span>¥550</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Message"></textarea>
+
+            <button type="submit">Send</button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Bunny Café</p>
+
+    </footer>
+
 </body>
 </html>

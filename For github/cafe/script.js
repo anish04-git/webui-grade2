@@ -1,96 +1,39 @@
-// MOBILE MENU TOGGLE
+let name ="Anish";
+const age = 20;
 
-const menuBtn = document.querySelector(".menu-btn");
-const nav = document.querySelector("nav");
+console.log(name);
 
-if(menuBtn){
-    menuBtn.addEventListener("click", () => {
-        nav.classList.toggle("active");
-    });
-}
-
-// SMOOTH SCROLL EFFECT
-
-const navLinks = document.querySelectorAll("nav a");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", function(e){
-
-        e.preventDefault();
-
-        const targetId = this.getAttribute("href");
-        const targetSection = document.querySelector(targetId);
-
-        window.scrollTo({
-            top: targetSection.offsetTop - 70,
-            behavior: "smooth"
-        });
-
-    });
-});
-
-// HERO BUTTON ACTION
-
-const heroButton = document.querySelector(".hero button");
-
-if(heroButton){
-    heroButton.addEventListener("click", () => {
-
-        const menuSection = document.querySelector("#menu");
-
-        window.scrollTo({
-            top: menuSection.offsetTop - 70,
-            behavior: "smooth"
-        });
-
-    });
-}
-
-// CONTACT FORM MESSAGE
-
-const contactForm = document.querySelector(".contact-form");
-
-if(contactForm){
-
-    contactForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        alert("Thank you! Your message has been sent.");
-
-        contactForm.reset();
-
-    });
+function greet(){
+    alert("Welcome to Bunny Cafe!");
 
 }
+greet();
 
-// SCROLL ANIMATION
+const title = document.querySelector("h1");
+ title.style.color="orange";
 
-const sections = document.querySelectorAll("section");
+ const btn = document.querySelector("button");
+  
+ btn.addEventListener("click", () => {
+    alert("Menu Opened");
+ });
+
+ const drinks = ["Latte", "Coffee", "Smoothie"];
+
+ drinks.forEach(drink => {
+    console.log(drink);
+ });
+
+const cafe = {
+    name : "Bunny Cafe",
+    location: "Osaka"
+};
+
+const body = document.body;
+body.classList.toggle("dark");
+ 
+const images = ["1.jpg", "2.jpg", "3.jpg"];
 
 window.addEventListener("scroll", () => {
-
-    sections.forEach(section => {
-
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if(sectionTop < window.innerHeight - 100){
-            section.classList.add("show");
-        }
-
-    });
-
+    console.log("Scrolling");
 });
-
-// CURRENT YEAR IN FOOTER
-
-const footerText = document.querySelector("footer p");
-
-if(footerText){
-
-    const year = new Date().getFullYear();
-
-    footerText.innerHTML =
-    `© ${year} Bunny Café. All Rights Reserved.`;
-
-}
