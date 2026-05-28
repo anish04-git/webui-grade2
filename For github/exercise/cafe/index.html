@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bunny Café</title>
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="logo.jpg" alt="Bunny Café Logo">
+
+            <span>Bunny Café</span>
+
+        </div>
+
+        <button class="menu-btn">
+            ☰
+        </button>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#reservation">Reservation</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section id="home" class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <span class="hero-subtitle">
+                Premium Café in Osaka
+            </span>
+
+            <h1>
+                Fresh Coffee & Sweet Moments
+            </h1>
+
+            <p>
+                Enjoy handcrafted coffee, smoothies,
+                desserts, and relaxing vibes
+                in our modern cozy café.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="scrollToMenu()">
+                    View Menu
+                </button>
+
+                <button class="secondary-btn">
+                    Book Table
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <span>About Us</span>
+
+            <h2>Welcome to Bunny Café</h2>
+
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    Bunny Café is a cozy and modern café
+                    located in Osaka, Japan.
+                    We serve premium coffee, smoothies,
+                    desserts, and fresh handmade drinks.
+                </p>
+
+                <p>
+                    Our mission is to create a relaxing
+                    atmosphere where friends, students,
+                    and families can enjoy sweet moments together.
+                </p>
+
+                <div class="about-features">
+
+                    <div class="feature-card">
+                        ☕ Premium Coffee
+                    </div>
+
+                    <div class="feature-card">
+                        🍰 Fresh Desserts
+                    </div>
+
+                    <div class="feature-card">
+                        📶 Free Wi-Fi
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="about-image">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <button id="themeToggle">
+        🌙
+    </button>
+
+
+    <!-- MENU -->
+
+    <section id="menu">
+
+        <div class="section-title">
+
+            <span>Our Menu</span>
+
+            <h2>Popular Drinks</h2>
+
+        </div>
+
+        <div class="menu-container">
+
+
+            <!-- CAPPUCCINO -->
+
+            <div class="menu-item">
+
+
+
+                <img src="capcuno.jpg" alt="Cappuccino">
+
+                <div class="menu-content">
+
+                    <h3>Cappuccino</h3>
+
+                    <p>
+                        Rich espresso with creamy milk foam.
+                    </p>
+
+                    <span>¥450</span>
+                    <button onclick="addToCart('Latte')">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SMOOTHIE -->
+
+            <div class="menu-item">
+
+                <img src="berry.jpg" alt="Berry Smoothie">
+
+                <div class="menu-content">
+
+                    <h3>Berry Smoothie</h3>
+
+                    <p>
+                        Fresh berries blended with yogurt.
+                    </p>
+
+                    <span>¥650</span>
+                    <button onclick="addToCart('Latte')">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LATTE -->
+
+            <div class="menu-item">
+
+                <img src="latte.jpg" alt="Latte">
+
+                <div class="menu-content">
+
+                    <h3>Latte</h3>
+
+                    <p>
+                        Smooth latte with fresh steamed milk.
+                    </p>
+
+                    <span>¥550</span>
+                    <button onclick="addToCart('Latte')">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESPRESSO -->
+
+            <div class="menu-item">
+
+                <img src="epresso.jpg" alt="Espresso">
+
+                <div class="menu-content">
+
+                    <h3>Espresso</h3>
+
+                    <p>
+                        Strong and aromatic premium espresso.
+                    </p>
+
+                    <span>¥400</span>
+                    <button onclick="addToCart('Latte')">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESERVATION -->
+
+    <section id="reservation">
+
+        <div class="section-title">
+
+            <span>Book Table</span>
+
+            <h2>Reservation</h2>
+
+        </div>
+
+        <div class="reservation-box">
+
+            <input type="text" id="guestName" placeholder="Your Name">
+
+            <input type="number" id="guestCount" placeholder="Number of Guests">
+
+            <button onclick="reserve()">
+                Reserve Table
+            </button>
+
+            <button onclick="pickRecommend()">
+                Recommend Drink
+            </button>
+
+            <p id="guestResult"></p>
+
+            <div id="recommendResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="section-title">
+
+            <span>Get In Touch</span>
+
+            <h2>Contact Us</h2>
+
+        </div>
+
+        <form class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Message" rows="5"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+    <section id="reviews">
+
+        <h2>Customer Reviews</h2>
+
+        <div class="review active">
+
+            <p>
+                “Amazing coffee and relaxing atmosphere.”
+            </p>
+
+            <h4>- Sakura</h4>
+
+        </div>
+
+        <div class="review">
+
+            <p>
+                “Best latte in Osaka!”
+            </p>
+
+            <h4>- Daniel</h4>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ☕ Bunny Café
+        </div>
+
+        <p>
+            Osaka, Japan
+        </p>
+
+        <p>
+            Open Daily: 9:00 AM – 10:00 PM
+        </p>
+
+        <p>
+            bunnycafe@gmail.com
+        </p>
+
+        <div class="socials">
+
+            <a href="#">Instagram</a>
+
+            <a href="#">Facebook</a>
+
+            <a href="#">TikTok</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 Bunny Café. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <section id="map">
+
+        <h2>Find Us</h2>
+
+        <iframe src="https://www.google.com/maps/embed?pb=" width="100%" height="350" style="border:0;"
+            allowfullscreen="" loading="lazy">
+        </iframe>
+
+    </section>
+
+</body>
+<div id="loader">
+
+    <div class="spinner"></div>
+
+</div>
+
+</html>
