@@ -26,10 +26,13 @@
 
     <script src="script.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <meta name="description" content="Bunny Café Osaka - Premium coffee, smoothies and desserts.">
 
+    <link rel="icon" href="logo.jpg">
 </head>
 
 <body>
+    <div class="cursor"></div>
 
     <!-- HEADER -->
 
@@ -65,41 +68,30 @@
 
 
     <!-- HERO SECTION -->
-
     <section id="home" class="hero">
-
         <div class="overlay"></div>
 
         <div class="hero-content">
+            <h1 id="typing"></h1>
 
             <span class="hero-subtitle">
                 Premium Café in Osaka
             </span>
 
-            <h1>
-                Fresh Coffee & Sweet Moments
-            </h1>
-
             <p>
-                Enjoy handcrafted coffee, smoothies,
-                desserts, and relaxing vibes
-                in our modern cozy café.
+                Enjoy handcrafted coffee, smoothies, desserts,
+                and unforgettable moments in a cozy atmosphere.
             </p>
 
             <div class="hero-buttons">
+                <button onclick="scrollToMenu()">View Menu</button>
 
-                <button onclick="scrollToMenu()">
-                    View Menu
-                </button>
-
-                <button class="secondary-btn">
+                <button class="secondary-btn"
+                    onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">
                     Book Table
                 </button>
-
             </div>
-
         </div>
-
     </section>
 
 
@@ -151,14 +143,14 @@
             </div>
 
             <div class="about-image">
-
+                <img src="cafe (2).jpg" alt="Bunny Café Interior">
             </div>
 
         </div>
 
     </section>
 
-    <button id="themeToggle">
+    <button id="themeToggle" aria-label="Toggle light mode" title="Toggle light mode">
         🌙
     </button>
 
@@ -195,9 +187,7 @@
                     </p>
 
                     <span>¥450</span>
-                    <button onclick="addToCart('Latte')">
-                        Order Now
-                    </button>
+                    <button onclick="addToCart('Cappuccino')">Order Now</button>
 
                 </div>
 
@@ -219,9 +209,7 @@
                     </p>
 
                     <span>¥650</span>
-                    <button onclick="addToCart('Latte')">
-                        Order Now
-                    </button>
+                    <button onclick="addToCart('Berry Smoothie')">Order Now</button>
 
                 </div>
 
@@ -243,9 +231,7 @@
                     </p>
 
                     <span>¥550</span>
-                    <button onclick="addToCart('Latte')">
-                        Order Now
-                    </button>
+                    <button onclick="addToCart('Latte')">Order Now</button>
 
                 </div>
 
@@ -267,9 +253,7 @@
                     </p>
 
                     <span>¥400</span>
-                    <button onclick="addToCart('Latte')">
-                        Order Now
-                    </button>
+                    <button onclick="addToCart('Espresso')">Order Now</button>
 
                 </div>
 
@@ -348,23 +332,18 @@
         <h2>Customer Reviews</h2>
 
         <div class="review active">
-
-            <p>
-                “Amazing coffee and relaxing atmosphere.”
-            </p>
-
+            <p>"Amazing coffee and relaxing atmosphere."</p>
             <h4>- Sakura</h4>
-
         </div>
 
         <div class="review">
-
-            <p>
-                “Best latte in Osaka!”
-            </p>
-
+            <p>"Best latte in Osaka!"</p>
             <h4>- Daniel</h4>
+        </div>
 
+        <div class="stats">
+            <h3 id="customers">0</h3>
+            <p>Happy Customers</p>
         </div>
 
     </section>
@@ -378,26 +357,14 @@
             ☕ Bunny Café
         </div>
 
-        <p>
-            Osaka, Japan
-        </p>
-
-        <p>
-            Open Daily: 9:00 AM – 10:00 PM
-        </p>
-
-        <p>
-            bunnycafe@gmail.com
-        </p>
+        <p>📍 Osaka, Japan</p>
+        <p>🕒 Open Daily: 9:00 AM – 10:00 PM</p>
+        <p>📧 bunnycafe@gmail.com</p>
 
         <div class="socials">
-
             <a href="#">Instagram</a>
-
             <a href="#">Facebook</a>
-
             <a href="#">TikTok</a>
-
         </div>
 
         <p class="copyright">
@@ -405,7 +372,6 @@
         </p>
 
     </footer>
-
 
     <section id="map">
 
@@ -416,12 +382,10 @@
         </iframe>
 
     </section>
-
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 </body>
-<div id="loader">
 
-    <div class="spinner"></div>
-
-</div>
 
 </html>
