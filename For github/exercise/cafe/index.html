@@ -46,11 +46,15 @@
 
         </div>
 
-        <button class="menu-btn">
+        <button class="menu-btn" aria-label="Toggle navigation" aria-expanded="false" type="button">
             ☰
         </button>
 
-        <nav>
+        <div class="cart-badge" aria-label="Cart items">
+            <span id="cartCount">0</span>
+        </div>
+
+        <nav aria-label="Primary navigation">
 
             <a href="#home">Home</a>
 
@@ -66,6 +70,7 @@
 
     </header>
 
+    <main>
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
@@ -84,10 +89,9 @@
             </p>
 
             <div class="hero-buttons">
-                <button onclick="scrollToMenu()">View Menu</button>
+                <button id="viewMenuBtn" type="button">View Menu</button>
 
-                <button class="secondary-btn"
-                    onclick="document.getElementById('reservation').scrollIntoView({behavior:'smooth'})">
+                <button id="bookTableBtn" class="secondary-btn" type="button">
                     Book Table
                 </button>
             </div>
@@ -143,14 +147,14 @@
             </div>
 
             <div class="about-image">
-                <img src="cafe (2).jpg" alt="Bunny Café Interior">
+                <img src="cafe (2).jpg" alt="Bunny Café Interior" loading="lazy">
             </div>
 
         </div>
 
     </section>
 
-    <button id="themeToggle" aria-label="Toggle light mode" title="Toggle light mode">
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode" type="button" aria-pressed="false">
         🌙
     </button>
 
@@ -176,7 +180,7 @@
 
 
 
-                <img src="capcuno.jpg" alt="Cappuccino">
+                <img src="capcuno.jpg" alt="Cappuccino" loading="lazy">
 
                 <div class="menu-content">
 
@@ -187,7 +191,7 @@
                     </p>
 
                     <span>¥450</span>
-                    <button onclick="addToCart('Cappuccino')">Order Now</button>
+                    <button type="button" data-item="Cappuccino">Order Now</button>
 
                 </div>
 
@@ -198,7 +202,7 @@
 
             <div class="menu-item">
 
-                <img src="berry.jpg" alt="Berry Smoothie">
+                <img src="berry.jpg" alt="Berry Smoothie" loading="lazy">
 
                 <div class="menu-content">
 
@@ -209,7 +213,7 @@
                     </p>
 
                     <span>¥650</span>
-                    <button onclick="addToCart('Berry Smoothie')">Order Now</button>
+                    <button type="button" data-item="Berry Smoothie">Order Now</button>
 
                 </div>
 
@@ -220,7 +224,7 @@
 
             <div class="menu-item">
 
-                <img src="latte.jpg" alt="Latte">
+                <img src="latte.jpg" alt="Latte" loading="lazy">
 
                 <div class="menu-content">
 
@@ -231,7 +235,7 @@
                     </p>
 
                     <span>¥550</span>
-                    <button onclick="addToCart('Latte')">Order Now</button>
+                    <button type="button" data-item="Latte">Order Now</button>
 
                 </div>
 
@@ -242,7 +246,7 @@
 
             <div class="menu-item">
 
-                <img src="epresso.jpg" alt="Espresso">
+                <img src="epresso.jpg" alt="Espresso" loading="lazy">
 
                 <div class="menu-content">
 
@@ -253,7 +257,7 @@
                     </p>
 
                     <span>¥400</span>
-                    <button onclick="addToCart('Espresso')">Order Now</button>
+                    <button type="button" data-item="Espresso">Order Now</button>
 
                 </div>
 
@@ -278,23 +282,27 @@
 
         <div class="reservation-box">
 
-            <input type="text" id="guestName" placeholder="Your Name">
+            <form id="reservationForm" class="reservation-form">
+                <label class="sr-only" for="guestName">Your Name</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Your Name" required>
 
-            <input type="number" id="guestCount" placeholder="Number of Guests">
+                <label class="sr-only" for="guestCount">Number of Guests</label>
+                <input type="number" id="guestCount" name="guestCount" placeholder="Number of Guests" min="1" required>
 
-            <button onclick="reserve()">
-                Reserve Table
-            </button>
+                <div class="button-row">
+                    <button type="submit">Reserve Table</button>
+                    <button type="button" id="recommendBtn">Recommend Drink</button>
+                </div>
 
-            <button onclick="pickRecommend()">
-                Recommend Drink
-            </button>
+                <p id="guestResult" aria-live="polite"></p>
+                <p id="recommendResult" aria-live="polite"></p>
+            </form>
 
-            <p id="guestResult"></p>
-
-            <div id="recommendResult"></div>
-
+            <div class="reservation-image">
+                <img src="cafe.jpg" alt="Bunny Café Interior" loading="lazy">
+            </div>
         </div>
+
 
     </section>
 
@@ -313,11 +321,14 @@
 
         <form class="contact-form">
 
-            <input type="text" placeholder="Your Name" required>
+            <label class="sr-only" for="contactName">Your Name</label>
+            <input id="contactName" name="contactName" type="text" placeholder="Your Name" required>
 
-            <input type="email" placeholder="Your Email" required>
+            <label class="sr-only" for="contactEmail">Your Email</label>
+            <input id="contactEmail" name="contactEmail" type="email" placeholder="Your Email" required>
 
-            <textarea placeholder="Message" rows="5"></textarea>
+            <label class="sr-only" for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="contactMessage" placeholder="Message" rows="5" required></textarea>
 
             <button type="submit">
                 Send Message
@@ -341,9 +352,9 @@
             <h4>- Daniel</h4>
         </div>
 
-        <div class="stats">
+        <div class="stats" data-target="5000" aria-labelledby="customers-label">
             <h3 id="customers">0</h3>
-            <p>Happy Customers</p>
+            <p id="customers-label">Happy Customers</p>
         </div>
 
     </section>
@@ -382,6 +393,9 @@
         </iframe>
 
     </section>
+
+    </main>
+
     <div id="loader">
         <div class="spinner"></div>
     </div>
